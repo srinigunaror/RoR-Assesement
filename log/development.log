@@ -1,0 +1,1214 @@
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE `task_management` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (44.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (9.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-02-22 07:30:26.351597', '2024-02-22 07:30:26.351601')[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (39.3ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `due_date` date, `status` int, `completed_date` date, `assigned_to_id` bigint NOT NULL, `priority` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_tasks_on_assigned_to_id` (`assigned_to_id`), CONSTRAINT `fk_rails_781b907909`
+FOREIGN KEY (`assigned_to_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (43.5ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `due_date` date, `status` int, `completed_date` date, `assigned_to_id` bigint NOT NULL, `priority` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_tasks_on_assigned_to_id` (`assigned_to_id`), CONSTRAINT `fk_rails_781b907909`
+FOREIGN KEY (`assigned_to_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (54.6ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `due_date` date, `status` int, `completed_date` date, `assigned_to_id` bigint, `priority` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_tasks_on_assigned_to_id` (`assigned_to_id`))[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222073041')[0m
+Migrating to CreateUsers (20240222074319)
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222074319')[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Margret Schoen', 'mason_lesch@bogisich.example', '2024-02-22 07:59:09.584248', '2024-02-22 07:59:09.584248')[0m
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Jody Grady', 'heath.effertz@schoen.test', '2024-02-22 07:59:09.598333', '2024-02-22 07:59:09.598333')[0m
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Endless Night', '[\"Omnis voluptatem quis.\", \"Itaque qui tenetur.\", \"Non fugiat officiis.\"]', '2024-02-22', NULL, NULL, 2, 1, '2024-02-22 07:59:09.649718', '2024-02-22 07:59:09.649718')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('If I Forget Thee Jerusalem', '[\"Et eligendi repellendus.\", \"Eius et omnis.\", \"Harum sapiente aut.\"]', '2024-02-22', NULL, NULL, 2, 1, '2024-02-22 07:59:09.662771', '2024-02-22 07:59:09.662771')[0m
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Jesting Pilate', '[\"Ut dolorum veniam.\", \"Numquam mollitia quis.\", \"Quibusdam et veritatis.\"]', '2024-02-24', NULL, NULL, 1, 1, '2024-02-22 07:59:09.695538', '2024-02-22 07:59:09.695538')[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('A Time to Kill', '[\"Quis perferendis voluptatibus.\", \"Iusto voluptatum deleniti.\", \"Quam amet sapiente.\"]', '2024-02-22', NULL, NULL, 2, 3, '2024-02-22 07:59:09.717058', '2024-02-22 07:59:09.717058')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('A Glass of Blessings', '[\"Assumenda accusamus quas.\", \"Voluptas ab ipsam.\", \"Est aut debitis.\"]', '2024-02-24', NULL, NULL, 2, 2, '2024-02-22 07:59:09.732330', '2024-02-22 07:59:09.732330')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('The Wives of Bath', '[\"Est occaecati tempora.\", \"Harum adipisci temporibus.\", \"Minima qui repellat.\"]', '2024-02-22', NULL, NULL, 1, 3, '2024-02-22 07:59:09.746298', '2024-02-22 07:59:09.746298')[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('A Time of Gifts', '[\"Earum repudiandae qui.\", \"Non illo mollitia.\", \"Aut reprehenderit consectetur.\"]', '2024-02-24', NULL, NULL, 1, 1, '2024-02-22 07:59:09.772195', '2024-02-22 07:59:09.772195')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Mother Night', '[\"Vitae vel assumenda.\", \"Velit cumque minima.\", \"Esse dolores a.\"]', '2024-02-22', NULL, NULL, 2, 1, '2024-02-22 07:59:09.786529', '2024-02-22 07:59:09.786529')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Things Fall Apart', '[\"Commodi quia ab.\", \"Odit alias qui.\", \"Officiis rem temporibus.\"]', '2024-02-24', NULL, NULL, 1, 1, '2024-02-22 07:59:09.798867', '2024-02-22 07:59:09.798867')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('The Glory and the Dream', '[\"Voluptatem praesentium et.\", \"Totam dicta nam.\", \"Culpa quia aut.\"]', '2024-02-23', NULL, NULL, 1, 2, '2024-02-22 07:59:09.811738', '2024-02-22 07:59:09.811738')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 /* loading for pp */ LIMIT 11[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 /* loading for inspect */ LIMIT 11[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 /* loading for pp */ LIMIT 11[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 /* loading for inspect */ LIMIT 11[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTask Load (3.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`assigned_to_id` = 2 /* loading for pp */ LIMIT 11[0m
+Started GET "/api/v1/tasks" for ::1 at 2024-02-22 13:42:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tasks"):
+  
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:42:17 +0530
+  
+Zeitwerk::NameError (expected file /home/prabhu/personal/tasK_management/app/controllers/api/tasks_controller.rb to define constant Api::TasksController, but didn't):
+  
+zeitwerk (2.6.13) lib/zeitwerk/loader/callbacks.rb:33:in `on_file_autoloaded'
+zeitwerk (2.6.13) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (7.1.3.2) lib/active_support/inflector/methods.rb:290:in `const_get'
+activesupport (7.1.3.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (7.1.3.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.1.3.2) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.1.3.2) lib/action_dispatch/request/utils.rb:100:in `action_encoding_template'
+actionpack (7.1.3.2) lib/action_dispatch/request/utils.rb:85:in `encode'
+actionpack (7.1.3.2) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.1.3.2) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.9.1) lib/rack/etag.rb:29:in `call'
+rack (3.0.9.1) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.9.1) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.9.1) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.9.1) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:43:22 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"title"=>"TEST POLL 21", "anonymous"=>false, "status"=>"notstart", "questions"=>[{"name"=>"Click your ID to mark your attendance", "type"=>"single", "answers"=>["12345", "67890", "23456", "78901"], "show_as_dropdown"=>true, "answer_required"=>true}], "poll_type"=>2, "task"=>{"title"=>"TEST POLL 21", "status"=>"notstart"}}
+Completed 204 No Content in 11ms (ActiveRecord: 1.1ms | Allocations: 4117)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:43:33 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 49)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:43:52 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 284)
+
+
+Started GET "/api/tasks.json" for ::1 at 2024-02-22 13:43:59 +0530
+Processing by Api::TasksController#index as JSON
+  Parameters: {"task"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:44:08 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:44:48 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 67)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:45:00 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:7:in `index'
+Completed 200 OK in 8267ms (Views: 0.7ms | ActiveRecord: 4.7ms | Allocations: 81820)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:45:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2999)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 13:46:20 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 1.1ms | Allocations: 175)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 14:56:43 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.8ms | Allocations: 259)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<Api::TasksController:0x0000000000f9b0>):
+  
+app/controllers/api/tasks_controller.rb:4:in `index'
+Started GET "/api/tasks" for ::1 at 2024-02-22 14:58:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+Completed 204 No Content in 9ms (ActiveRecord: 1.4ms | Allocations: 2872)
+
+
+Started GET "/api/tasks.json" for ::1 at 2024-02-22 14:58:29 +0530
+Processing by Api::TasksController#index as JSON
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 54)
+
+
+Started GET "/api/tasks.json" for ::1 at 2024-02-22 14:58:33 +0530
+Processing by Api::TasksController#index as JSON
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 50)
+
+
+Started GET "/api/tasks.json" for ::1 at 2024-02-22 14:59:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as JSON
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:3
+  Rendered api/tasks/index.json.jbuilder (Duration: 3183.8ms | Allocations: 65814)
+Completed 200 OK in 3525ms (Views: 3184.8ms | ActiveRecord: 6.0ms | Allocations: 357293)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 14:59:49 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:3
+  Rendered api/tasks/index.json.jbuilder (Duration: 1994.5ms | Allocations: 2588)
+Completed 200 OK in 1998ms (Views: 1994.4ms | ActiveRecord: 1.2ms | Allocations: 3137)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:00:32 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 11.7ms | Allocations: 5463)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.3ms | Allocations: 6542)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for Task:Class):
+    1: json.set! :tasks do
+    2:   json.array! @tasks.each do |task|
+    3:   	json.(task, *Task.attributes)
+    4:   end
+    5: end
+  
+app/views/api/tasks/index.json.jbuilder:3
+app/views/api/tasks/index.json.jbuilder:2
+app/views/api/tasks/index.json.jbuilder:1
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:01:05 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 9.8ms | Allocations: 4707)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.8ms | Allocations: 5671)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:01:19 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 5.2ms | Allocations: 909)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 1128)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY `tasks`.`id` DESC LIMIT 1[0m
+Started POST "/api/tasks" for ::1 at 2024-02-22 15:12:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "task":{
+        "title": "Task Title",
+        "description": Task Description,
+        "due_date": "2024-03-03",
+        "assigned_to_id": 2
+    }
+}
+Processing by Api::TasksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 185)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/tasks_controller.rb:19:in `task_params'
+app/controllers/api/tasks_controller.rb:8:in `create'
+Started POST "/api/tasks" for ::1 at 2024-02-22 15:12:39 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "task":{
+        "title": "Task Title",
+        "description": Task Description,
+        "due_date": "2024-03-03",
+        "assigned_to_id": 2
+    }
+}
+Processing by Api::TasksController#create as */*
+Completed 400 Bad Request in 41421ms (ActiveRecord: 0.0ms | Allocations: 55593)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/tasks_controller.rb:20:in `task_params'
+app/controllers/api/tasks_controller.rb:8:in `create'
+Started POST "/api/tasks" for ::1 at 2024-02-22 15:13:34 +0530
+Processing by Api::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2}}
+Completed 500 Internal Server Error in 3897ms (ActiveRecord: 4.4ms | Allocations: 14689)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/api/tasks_controller.rb:9:in `create'
+Started POST "/api/tasks" for ::1 at 2024-02-22 15:13:50 +0530
+Processing by Api::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:9:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:9:in `create'
+  [1m[36mTask Create (3.0ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Task Title', 'Task Description', '2024-03-03', NULL, NULL, 2, NULL, '2024-02-22 09:43:53.699699', '2024-02-22 09:43:53.699699')[0m
+  ↳ app/controllers/api/tasks_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:9:in `create'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.7ms | Allocations: 231)
+Completed 200 OK in 3257ms (Views: 240.7ms | ActiveRecord: 15.2ms | Allocations: 299468)
+
+
+  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 LIMIT 1[0m
+Started GET "/api/tasks/11" for ::1 at 2024-02-22 15:23:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "task":{
+        "title": "Task Title",
+        "description": "Task Description",
+        "due_date": "2024-03-03",
+        "assigned_to_id": 2
+        "priority": "High"
+    }
+}
+Processing by Api::TasksController#show as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 1433)
+
+
+  
+NoMethodError (undefined method `set_task' for #<Api::TasksController:0x00000000008c28>):
+  
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:109:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.9.1) lib/rack/etag.rb:29:in `call'
+rack (3.0.9.1) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.9.1) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.9.1) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.9.1) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/tasks/11" for ::1 at 2024-02-22 15:25:46 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "task":{
+        "title": "Task Title",
+        "description": "Task Description",
+        "due_date": "2024-03-03",
+        "assigned_to_id": 2
+        "priority": "High"
+    }
+}
+Processing by Api::TasksController#show as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/tasks_controller.rb:37:in `set_task'
+Started GET "/api/tasks/11" for ::1 at 2024-02-22 15:26:05 +0530
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:37:in `set_task'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.8ms | Allocations: 363)
+Completed 200 OK in 347ms (Views: 3.8ms | ActiveRecord: 1.8ms | Allocations: 295172)
+
+
+Started PUT "/api/tasks/11" for ::1 at 2024-02-22 15:26:11 +0530
+Processing by Api::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:37:in `set_task'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:23:in `update'
+  [1m[36mTask Update (10.0ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`priority` = 1, `tasks`.`updated_at` = '2024-02-22 09:56:11.297004' WHERE `tasks`.`id` = 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:23:in `update'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.3ms | Allocations: 49)
+Completed 200 OK in 27ms (Views: 1.0ms | ActiveRecord: 17.6ms | Allocations: 3200)
+
+
+Started DELETE "/api/tasks/10" for ::1 at 2024-02-22 15:28:59 +0530
+Processing by Api::TasksController#destroy as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}, "id"=>"10"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 150)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/tasks_controller.rb:31:in `destroy'
+Started DELETE "/api/tasks/10" for ::1 at 2024-02-22 15:29:17 +0530
+Processing by Api::TasksController#destroy as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}, "id"=>"10"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 10 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:45:in `set_task'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:31:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM `tasks` WHERE `tasks`.`id` = 10[0m
+  ↳ app/controllers/api/tasks_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:31:in `destroy'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 6.5ms | Allocations: 6237)
+
+
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:30:26 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 160)
+
+
+  
+NoMethodError (undefined method `paginate' for nil:NilClass):
+  
+app/controllers/api/tasks_controller.rb:6:in `index'
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:31:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 251)
+
+
+  
+NoMethodError (undefined method `paginate' for nil:NilClass):
+  
+app/controllers/api/tasks_controller.rb:6:in `index'
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:31:37 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.2ms | Allocations: 14512)
+
+
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  
+NoMethodError (undefined method `paginate' for #<ActiveRecord::Relation [#<Task id: 11, title: "Task Title", description: "Task Description", due_date: "2024-03-03", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 09:43:53.699699000 +0000", updated_at: "2024-02-22 09:56:11.297004000 +0000">, #<Task id: 3, title: "Jesting Pilate", description: "[\"Ut dolorum veniam.\", \"Numquam mollitia quis.\", \"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.695538000 +0000", updated_at: "2024-02-22 07:59:09.695538000 +0000">, #<Task id: 7, title: "A Time of Gifts", description: "[\"Earum repudiandae qui.\", \"Non illo mollitia.\", \"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.772195000 +0000", updated_at: "2024-02-22 07:59:09.772195000 +0000">, #<Task id: 9, title: "Things Fall Apart", description: "[\"Commodi quia ab.\", \"Odit alias qui.\", \"Officiis ...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.798867000 +0000", updated_at: "2024-02-22 07:59:09.798867000 +0000">, #<Task id: 5, title: "A Glass of Blessings", description: "[\"Assumenda accusamus quas.\", \"Voluptas ab ipsam.\"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 2, priority: "Low", created_at: "2024-02-22 07:59:09.732330000 +0000", updated_at: "2024-02-22 07:59:09.732330000 +0000">, #<Task id: 1, title: "Endless Night", description: "[\"Omnis voluptatem quis.\", \"Itaque qui tenetur.\", ...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.649718000 +0000", updated_at: "2024-02-22 07:59:09.649718000 +0000">, #<Task id: 2, title: "If I Forget Thee Jerusalem", description: "[\"Et eligendi repellendus.\", \"Eius et omnis.\", \"Ha...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.662771000 +0000", updated_at: "2024-02-22 07:59:09.662771000 +0000">, #<Task id: 8, title: "Mother Night", description: "[\"Vitae vel assumenda.\", \"Velit cumque minima.\", \"...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.786529000 +0000", updated_at: "2024-02-22 07:59:09.786529000 +0000">, #<Task id: 4, title: "A Time to Kill", description: "[\"Quis perferendis voluptatibus.\", \"Iusto voluptat...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "Medium", created_at: "2024-02-22 07:59:09.717058000 +0000", updated_at: "2024-02-22 07:59:09.717058000 +0000">, #<Task id: 6, title: "The Wives of Bath", description: "[\"Est occaecati tempora.\", \"Harum adipisci tempori...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 1, priority: "Medium", created_at: "2024-02-22 07:59:09.746298000 +0000", updated_at: "2024-02-22 07:59:09.746298000 +0000">]>):
+  
+app/controllers/api/tasks_controller.rb:6:in `index'
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:32:07 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms | Allocations: 14575)
+
+
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  
+NoMethodError (undefined method `paginate' for #<ActiveRecord::Relation [#<Task id: 11, title: "Task Title", description: "Task Description", due_date: "2024-03-03", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 09:43:53.699699000 +0000", updated_at: "2024-02-22 09:56:11.297004000 +0000">, #<Task id: 3, title: "Jesting Pilate", description: "[\"Ut dolorum veniam.\", \"Numquam mollitia quis.\", \"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.695538000 +0000", updated_at: "2024-02-22 07:59:09.695538000 +0000">, #<Task id: 7, title: "A Time of Gifts", description: "[\"Earum repudiandae qui.\", \"Non illo mollitia.\", \"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.772195000 +0000", updated_at: "2024-02-22 07:59:09.772195000 +0000">, #<Task id: 9, title: "Things Fall Apart", description: "[\"Commodi quia ab.\", \"Odit alias qui.\", \"Officiis ...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 1, priority: "High", created_at: "2024-02-22 07:59:09.798867000 +0000", updated_at: "2024-02-22 07:59:09.798867000 +0000">, #<Task id: 5, title: "A Glass of Blessings", description: "[\"Assumenda accusamus quas.\", \"Voluptas ab ipsam.\"...", due_date: "2024-02-24", status: nil, completed_date: nil, assigned_to_id: 2, priority: "Low", created_at: "2024-02-22 07:59:09.732330000 +0000", updated_at: "2024-02-22 07:59:09.732330000 +0000">, #<Task id: 1, title: "Endless Night", description: "[\"Omnis voluptatem quis.\", \"Itaque qui tenetur.\", ...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.649718000 +0000", updated_at: "2024-02-22 07:59:09.649718000 +0000">, #<Task id: 2, title: "If I Forget Thee Jerusalem", description: "[\"Et eligendi repellendus.\", \"Eius et omnis.\", \"Ha...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.662771000 +0000", updated_at: "2024-02-22 07:59:09.662771000 +0000">, #<Task id: 8, title: "Mother Night", description: "[\"Vitae vel assumenda.\", \"Velit cumque minima.\", \"...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "High", created_at: "2024-02-22 07:59:09.786529000 +0000", updated_at: "2024-02-22 07:59:09.786529000 +0000">, #<Task id: 4, title: "A Time to Kill", description: "[\"Quis perferendis voluptatibus.\", \"Iusto voluptat...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 2, priority: "Medium", created_at: "2024-02-22 07:59:09.717058000 +0000", updated_at: "2024-02-22 07:59:09.717058000 +0000">, #<Task id: 6, title: "The Wives of Bath", description: "[\"Est occaecati tempora.\", \"Harum adipisci tempori...", due_date: "2024-02-22", status: nil, completed_date: nil, assigned_to_id: 1, priority: "Medium", created_at: "2024-02-22 07:59:09.746298000 +0000", updated_at: "2024-02-22 07:59:09.746298000 +0000">]>):
+  
+app/controllers/api/tasks_controller.rb:6:in `index'
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+Started GET "/api/tasks" for ::1 at 2024-02-22 15:32:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 18.2ms | Allocations: 12506)
+Completed 200 OK in 234ms (Views: 19.5ms | ActiveRecord: 1.6ms | Allocations: 296541)
+
+
+Started GET "/api/tasks/11" for ::1 at 2024-02-22 15:33:44 +0530
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "assigned_to_id"=>2, "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:45:in `set_task'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.5ms | Allocations: 115)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 2136)
+
+
+Started PUT "/api/tasks/11/assign" for ::1 at 2024-02-22 15:34:05 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/api/tasks/11/assign"):
+  
+Started PUT "/api/tasks/11/assign" for ::1 at 2024-02-22 15:35:53 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/api/tasks/11/assign"):
+  
+Started POST "/api/tasks/11/assign" for ::1 at 2024-02-22 15:36:06 +0530
+Processing by Api::TasksController#assign as */*
+  Parameters: {"task"=>{"assigned_to_id"=>1}, "id"=>"11"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:53:in `set_task'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.6ms | Allocations: 5246)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, Integer passed.):
+  
+app/controllers/api/tasks_controller.rb:39:in `assign'
+Started POST "/api/tasks/11/assign" for ::1 at 2024-02-22 15:36:26 +0530
+Processing by Api::TasksController#assign as */*
+  Parameters: {"task"=>{"assigned_to_id"=>1}, "id"=>"11"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:53:in `set_task'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`assigned_to_id` = 1, `tasks`.`updated_at` = '2024-02-22 10:06:26.253269' WHERE `tasks`.`id` = 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.6ms | Allocations: 130)
+Completed 200 OK in 44ms (Views: 2.6ms | ActiveRecord: 14.5ms | Allocations: 14678)
+
+
+Started POST "/api/tasks/11/assign" for ::1 at 2024-02-22 15:36:35 +0530
+Processing by Api::TasksController#assign as */*
+  Parameters: {"task"=>{"assigned_to_id"=>2}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:53:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mTask Update (0.4ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`assigned_to_id` = 2, `tasks`.`updated_at` = '2024-02-22 10:06:35.028771' WHERE `tasks`.`id` = 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:39:in `assign'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.4ms | Allocations: 46)
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 13.5ms | Allocations: 3135)
+
+
+Started GET "/api/users/1/tasks" for ::1 at 2024-02-22 15:40:42 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/1/tasks"):
+  
+Started GET "/api/users/1/tasks" for ::1 at 2024-02-22 15:41:08 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"task"=>{"assigned_to_id"=>2}, "user_id"=>"1"}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 10.3ms | Allocations: 5137)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 1.8ms | Allocations: 6349)
+
+
+Started GET "/api/users/1/tasks" for ::1 at 2024-02-22 15:41:25 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"user_id"=>"1", "task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 3.3ms | Allocations: 958)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 1236)
+
+
+Started GET "/api/users/1/tasks" for ::1 at 2024-02-22 15:42:18 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"user_id"=>"1", "task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`assigned_to_id` = 1 ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 9.1ms | Allocations: 4281)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.9ms | Allocations: 5428)
+
+
+Started GET "/api/users/2/tasks" for ::1 at 2024-02-22 15:42:29 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"user_id"=>"2", "task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`assigned_to_id` = 2 ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 2.4ms | Allocations: 783)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1088)
+
+
+Started GET "/api/users/2/tasks" for ::1 at 2024-02-22 15:42:51 +0530
+Processing by Api::TasksController#index as */*
+  Parameters: {"user_id"=>"2", "task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`assigned_to_id` = 2 ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 7.0ms | Allocations: 4350)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 1.7ms | Allocations: 5490)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[35m (96.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `task_management`[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE `task_management` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `task_management` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (38.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (37.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (9.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-02-22 10:19:07.344881', '2024-02-22 10:19:07.344891')[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (47.7ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `due_date` date, `status` int DEFAULT 1, `completed_date` date, `assigned_to_id` bigint, `priority` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_tasks_on_assigned_to_id` (`assigned_to_id`))[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222073041')[0m
+Migrating to CreateUsers (20240222074319)
+  [1m[35m (34.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222074319')[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Gale Marks', 'alton.wehner@kuhic-von.test', '2024-02-22 10:19:13.053545', '2024-02-22 10:19:13.053545')[0m
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Neil Miller Esq.', 'marcelene@stracke.example', '2024-02-22 10:19:13.066774', '2024-02-22 10:19:13.066774')[0m
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('In a Glass Darkly', 'Atque dolorem suscipit vel.', '2024-02-25', 1, NULL, 2, 1, '2024-02-22 10:19:13.104702', '2024-02-22 10:19:13.104702')[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Dance Dance Dance', 'Libero incidunt fuga accusamus.', '2024-02-24', 1, NULL, 1, 2, '2024-02-22 10:19:13.117121', '2024-02-22 10:19:13.117121')[0m
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Clouds of Witness', 'Aperiam quasi et aut.', '2024-02-22', 1, NULL, 1, 1, '2024-02-22 10:19:13.141172', '2024-02-22 10:19:13.141172')[0m
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('The Man Within', 'Quis voluptate quasi sint.', '2024-02-23', 1, NULL, 1, 1, '2024-02-22 10:19:13.159930', '2024-02-22 10:19:13.159930')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('The House of Mirth', 'Consequatur voluptas iure fugit.', '2024-02-23', 1, NULL, 2, 1, '2024-02-22 10:19:13.174213', '2024-02-22 10:19:13.174213')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('That Good Night', 'Non quidem rerum aspernatur.', '2024-02-23', 1, NULL, 1, 2, '2024-02-22 10:19:13.186869', '2024-02-22 10:19:13.186869')[0m
+  [1m[36mTRANSACTION (17.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('To Your Scattered Bodies Go', 'Aut suscipit qui minus.', '2024-02-23', 1, NULL, 1, 2, '2024-02-22 10:19:13.211492', '2024-02-22 10:19:13.211492')[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('An Acceptable Time', 'Aliquam quia est aut.', '2024-02-25', 1, NULL, 2, 3, '2024-02-22 10:19:13.234657', '2024-02-22 10:19:13.234657')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('Surprised by Joy', 'Odio commodi architecto libero.', '2024-02-24', 1, NULL, 2, 3, '2024-02-22 10:19:13.252593', '2024-02-22 10:19:13.252593')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `created_at`, `updated_at`) VALUES ('As I Lay Dying', 'Qui voluptas ipsam aut.', '2024-02-24', 1, NULL, 1, 3, '2024-02-22 10:19:13.265184', '2024-02-22 10:19:13.265184')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[35m (118.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `task_management`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `task_management` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (44.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('805014669356415840', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (5.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-02-22 10:20:30.713452', '2024-02-22 10:20:30.713465')[0m
+Migrating to CreateTasks (20240222073041)
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `due_date` date, `status` int DEFAULT 1, `completed_date` date, `assigned_to_id` bigint, `priority` int, `progess_percentage` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_tasks_on_assigned_to_id` (`assigned_to_id`))[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222073041')[0m
+Migrating to CreateUsers (20240222074319)
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240222074319')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('805014669356415840')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Brent Conroy', 'herminia@marks.test', '2024-02-22 10:20:34.907634', '2024-02-22 10:20:34.907634')[0m
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('Twyla Kutch', 'lu@rosenbaum-rolfson.test', '2024-02-22 10:20:34.926270', '2024-02-22 10:20:34.926270')[0m
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('All Passion Spent', 'Asperiores veritatis tempore quidem.', '2024-02-25', 1, NULL, 2, 1, NULL, '2024-02-22 10:20:34.958728', '2024-02-22 10:20:34.958728')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('The Little Foxes', 'Enim expedita voluptas ullam.', '2024-02-22', 1, NULL, 2, 1, NULL, '2024-02-22 10:20:34.974347', '2024-02-22 10:20:34.974347')[0m
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('The Torment of Others', 'Eos autem a nam.', '2024-02-23', 1, NULL, 1, 2, NULL, '2024-02-22 10:20:34.990380', '2024-02-22 10:20:34.990380')[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('Of Human Bondage', 'Sed commodi sapiente et.', '2024-02-22', 1, NULL, 1, 3, NULL, '2024-02-22 10:20:35.001529', '2024-02-22 10:20:35.001529')[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('The Monkey\'s Raincoat', 'Vel excepturi expedita est.', '2024-02-23', 1, NULL, 2, 2, NULL, '2024-02-22 10:20:35.012770', '2024-02-22 10:20:35.012770')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('Dying of the Light', 'Inventore consequatur placeat eum.', '2024-02-22', 1, NULL, 1, 1, NULL, '2024-02-22 10:20:35.031828', '2024-02-22 10:20:35.031828')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('A Scanner Darkly', 'Modi sit accusamus voluptatem.', '2024-02-24', 1, NULL, 2, 1, NULL, '2024-02-22 10:20:35.045877', '2024-02-22 10:20:35.045877')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('A Handful of Dust', 'Velit voluptatum et harum.', '2024-02-24', 1, NULL, 1, 1, NULL, '2024-02-22 10:20:35.066281', '2024-02-22 10:20:35.066281')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('Such, Such Were the Joys', 'Exercitationem accusantium blanditiis ut.', '2024-02-23', 1, NULL, 1, 2, NULL, '2024-02-22 10:20:35.078505', '2024-02-22 10:20:35.078505')[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('Look Homeward, Angel', 'Quos est pariatur laboriosam.', '2024-02-23', 1, NULL, 2, 3, NULL, '2024-02-22 10:20:35.097868', '2024-02-22 10:20:35.097868')[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/tasks/11/progress" for ::1 at 2024-02-22 15:56:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/tasks/11/progress"):
+  
+Started GET "/api/tasks/11/progress" for ::1 at 2024-02-22 15:56:43 +0530
+  
+NoMethodError (undefined method `PUT' for #<ActionDispatch::Routing::Mapper:0x00007fe8e742bff8 @set=#<ActionDispatch::Routing::RouteSet:0x00007fe8fed794e0>, @draw_paths=[#<Pathname:/home/prabhu/.rvm/gems/ruby-3.2.2/gems/actionview-7.1.3.2/config/routes>, #<Pathname:/home/prabhu/.rvm/gems/ruby-3.2.2/gems/activestorage-7.1.3.2/config/routes>, #<Pathname:/home/prabhu/.rvm/gems/ruby-3.2.2/gems/actioncable-7.1.3.2/config/routes>, #<Pathname:/home/prabhu/.rvm/gems/ruby-3.2.2/gems/actionmailbox-7.1.3.2/config/routes>, #<Pathname:/home/prabhu/.rvm/gems/ruby-3.2.2/gems/actiontext-7.1.3.2/config/routes>, #<Pathname:/home/prabhu/personal/tasK_management/config/routes>, #<Pathname:/home/prabhu/personal/tasK_management/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007fe8fcd96470 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x00007fe8fd8b2b60 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>):
+  
+config/routes.rb:16:in `block (3 levels) in <main>'
+config/routes.rb:14:in `block (2 levels) in <main>'
+config/routes.rb:13:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started PUT "/api/tasks/11/progress" for ::1 at 2024-02-22 15:57:05 +0530
+Processing by Api::TasksController#progress as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:65:in `set_task'
+Completed 404 Not Found in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 4003)
+
+
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY `tasks`.`id` DESC LIMIT 1[0m
+Started PUT "/api/tasks/10/progress" for ::1 at 2024-02-22 15:57:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#progress as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"10"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 10 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:65:in `set_task'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:51:in `progress'
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`progess_percentage` = 44, `tasks`.`updated_at` = '2024-02-22 10:27:27.701455' WHERE `tasks`.`id` = 10[0m
+  ↳ app/controllers/api/tasks_controller.rb:51:in `progress'
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:51:in `progress'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.8ms | Allocations: 262)
+Completed 200 OK in 283ms (Views: 194.7ms | ActiveRecord: 15.3ms | Allocations: 299444)
+
+
+Started PUT "/api/tasks/10/progress" for ::1 at 2024-02-22 15:59:20 +0530
+Processing by Api::TasksController#progress as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"10"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 10 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:69:in `set_task'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.7ms | Allocations: 135)
+Completed 200 OK in 12ms (Views: 2.8ms | ActiveRecord: 1.4ms | Allocations: 6541)
+
+
+Started GET "/api/tasks/overdue" for ::1 at 2024-02-22 15:59:36 +0530
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"overdue"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = NULL ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:69:in `set_task'
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 609)
+
+
+Started GET "/api/tasks/overdue" for ::1 at 2024-02-22 15:59:49 +0530
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"overdue"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = NULL ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:69:in `set_task'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1440)
+
+
+Started GET "/api/tasks/overdue" for ::1 at 2024-02-22 16:00:10 +0530
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "id"=>"overdue"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = NULL ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:69:in `set_task'
+Completed 404 Not Found in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1444)
+
+
+Started GET "/api/tasks/overdue" for ::1 at 2024-02-22 16:00:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#overdue as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}}
+No template found for Api::TasksController#overdue, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 0.2ms | Allocations: 2126)
+
+
+Started GET "/api/tasks/overdue" for ::1 at 2024-02-22 16:00:50 +0530
+Processing by Api::TasksController#overdue as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (due_date < '2024-02-22') ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 2.1ms | Allocations: 832)
+Completed 200 OK in 194ms (Views: 192.3ms | ActiveRecord: 0.4ms | Allocations: 283438)
+
+
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:03:49 +0530
+  
+ArgumentError (You should not use the `match` method in your router without specifying an HTTP method.
+If you want to expose your action to both GET and POST, add `via: [:get, :post]` option.
+If you want to expose your action to GET, use `get` in the router:
+  Instead of: match "controller#action"
+  Do: get "controller#action"):
+  
+config/routes.rb:18:in `block (3 levels) in <main>'
+config/routes.rb:14:in `block (2 levels) in <main>'
+config/routes.rb:13:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:04:12 +0530
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:18:in `block (3 levels) in <main>'
+config/routes.rb:14:in `block (2 levels) in <main>'
+config/routes.rb:13:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:04:33 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/tasks/status/complete"):
+  
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:05:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"complete"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` IS NULL ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:74:in `set_task'
+Completed 404 Not Found in 26ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 4006)
+
+
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:05:52 +0530
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"complete"}
+No template found for Api::TasksController#status, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 927)
+
+
+Started GET "/api/tasks/status/complete" for ::1 at 2024-02-22 16:06:27 +0530
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"complete"}
+No template found for Api::TasksController#status, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.7ms | Allocations: 1368)
+
+
+  [1m[36mTask Pluck (0.7ms)[0m  [1m[34mSELECT `tasks`.`status` FROM `tasks`[0m
+Started GET "/api/tasks/status/Started" for ::1 at 2024-02-22 16:06:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"Started"}
+No template found for Api::TasksController#status, rendering head :no_content
+Completed 204 No Content in 25ms (ActiveRecord: 1.0ms | Allocations: 3914)
+
+
+Started GET "/api/tasks/status/Started" for ::1 at 2024-02-22 16:07:15 +0530
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"Started"}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`status` IS NULL ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 2.1ms | Allocations: 929)
+Completed 200 OK in 189ms (Views: 184.8ms | ActiveRecord: 1.1ms | Allocations: 283963)
+
+
+Started GET "/api/tasks/status/started" for ::1 at 2024-02-22 16:07:21 +0530
+Processing by Api::TasksController#status as */*
+  Parameters: {"task"=>{"progess_percentage"=>44}, "status"=>"started"}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`status` = 1 ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 19.6ms | Allocations: 12454)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 12754)
+
+
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:09:55 +0530
+Processing by Api::TasksController#completed as */*
+  Parameters: {"start_date"=>"2024-01-01", "end_date"=>"2024-03-31", "task"=>{}}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (created_at between '2024-01-01' and '2024-03-31') /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:70:in `completed'
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (due_date between '2024-01-01' and '2024-03-31') /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:70:in `completed'
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (completed_date between '2024-01-01' and '2024-03-31') /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:70:in `completed'
+No template found for Api::TasksController#completed, rendering head :no_content
+Completed 204 No Content in 216123ms (ActiveRecord: 4.0ms | Allocations: 63188)
+
+
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:13:33 +0530
+  
+SyntaxError (/home/prabhu/personal/tasK_management/app/models/task.rb:13: syntax error, unexpected `and'
+...re(completed_date between ? and ?", start_date, end_date) } 
+...                            ^~~
+):
+  
+app/models/task.rb:13: syntax error, unexpected `and'
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:15:05 +0530
+  
+SyntaxError (/home/prabhu/personal/tasK_management/app/models/task.rb:20: unterminated string meets end of file
+/home/prabhu/personal/tasK_management/app/models/task.rb:20: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/models/task.rb:20: unterminated string meets end of file
+app/models/task.rb:20: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:15:53 +0530
+  
+SyntaxError (/home/prabhu/personal/tasK_management/app/models/task.rb:13: syntax error, unexpected '?'
+...te) { where(completed_date >= ? and completed_date <= ?", st...
+...                              ^
+):
+  
+app/models/task.rb:13: syntax error, unexpected '?'
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:16:22 +0530
+Processing by Api::TasksController#completed as */*
+  Parameters: {"start_date"=>"2024-01-01", "end_date"=>"2024-03-31", "task"=>{}}
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 10.1ms | Allocations: 4934)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 2.9ms | Allocations: 6324)
+
+
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:16:56 +0530
+Processing by Api::TasksController#completed as */*
+  Parameters: {"start_date"=>"2024-01-01", "end_date"=>"2024-03-31", "task"=>{}}
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (completed_date between '2024-01-01' and '2024-03-31') /* loading for inspect */ ORDER BY due_date desc, priority asc LIMIT 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:70:in `completed'
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date desc, priority asc[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 27.9ms | Allocations: 4819)
+Completed 200 OK in 6990ms (Views: 32.9ms | ActiveRecord: 4.2ms | Allocations: 8976)
+
+
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:17:14 +0530
+Processing by Api::TasksController#completed as */*
+  Parameters: {"start_date"=>"2024-01-01", "end_date"=>"2024-03-31", "task"=>{}}
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date ASC, priority DESC LIMIT 1[0m
+  ↳ (byebug):1:in `completed'
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (completed_date between '2024-01-01' and '2024-03-31') ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 6.5ms | Allocations: 597)
+Completed 200 OK in 33525ms (Views: 26.7ms | ActiveRecord: 4.7ms | Allocations: 10595)
+
+
+Started GET "/api/tasks/completed?start_date=2024-01-01&end_date=2024-03-31" for ::1 at 2024-02-22 16:17:50 +0530
+Processing by Api::TasksController#completed as */*
+  Parameters: {"start_date"=>"2024-01-01", "end_date"=>"2024-03-31", "task"=>{}}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` ORDER BY due_date ASC, priority DESC LIMIT 1[0m
+  ↳ (byebug):1:in `completed'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `completed'
+  [1m[36mTask Update (1.1ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`status` = 2, `tasks`.`completed_date` = '2024-02-22', `tasks`.`updated_at` = '2024-02-22 10:48:01.276486' WHERE `tasks`.`id` = 4[0m
+  ↳ (byebug):1:in `completed'
+  [1m[36mTRANSACTION (22.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `completed'
+  Rendering api/tasks/index.json.jbuilder
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE (completed_date between '2024-01-01' and '2024-03-31') ORDER BY due_date desc, priority asc LIMIT 30 OFFSET 0[0m
+  ↳ app/views/api/tasks/index.json.jbuilder:2
+  Rendered api/tasks/index.json.jbuilder (Duration: 4.8ms | Allocations: 662)
+Completed 200 OK in 13786ms (Views: 9.5ms | ActiveRecord: 27.9ms | Allocations: 13962)
+
+
+Started GET "/api/tasks/statistics" for ::1 at 2024-02-22 16:22:20 +0530
+Processing by Api::TasksController#statistics as */*
+  Parameters: {"task"=>{}}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` IS NULL ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:87:in `set_task'
+Completed 404 Not Found in 3ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 831)
+
+
+Started GET "/api/tasks/statistics" for ::1 at 2024-02-22 16:22:30 +0530
+Processing by Api::TasksController#statistics as */*
+  Parameters: {"task"=>{}}
+  [1m[36mTask Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `tasks`[0m
+  ↳ app/controllers/api/tasks_controller.rb:74:in `statistics'
+  [1m[36mTask Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `tasks` WHERE `tasks`.`status` = 2[0m
+  ↳ app/controllers/api/tasks_controller.rb:75:in `statistics'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1242)
+
+
+Started POST "/api/tasks" for ::1 at 2024-02-22 16:26:20 +0530
+Processing by Api::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"Low"}}
+[31mUnpermitted parameter: :priority. Context: { controller: Api::TasksController, action: create, request: #<ActionDispatch::Request:0x00007f57a00f6a50>, params: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"Low"}, "controller"=>"api/tasks", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tasks_controller.rb:15:in `create'
+Completed 200 OK in 23ms (Views: 2.4ms | ActiveRecord: 3.2ms | Allocations: 8569)
+
+
+Started POST "/api/tasks" for ::1 at 2024-02-22 16:27:04 +0530
+Processing by Api::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"Low"}}
+[31mUnpermitted parameter: :priority. Context: { controller: Api::TasksController, action: create, request: #<ActionDispatch::Request:0x00007f576f921918>, params: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"Low"}, "controller"=>"api/tasks", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:15:in `create'
+  [1m[36mTask Create (1.9ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `status`, `completed_date`, `assigned_to_id`, `priority`, `progess_percentage`, `created_at`, `updated_at`) VALUES ('Task Title', 'Task Description', '2024-03-03', 1, NULL, NULL, NULL, NULL, '2024-02-22 10:57:05.086568', '2024-02-22 10:57:05.086568')[0m
+  ↳ app/controllers/api/tasks_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:15:in `create'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.6ms | Allocations: 128)
+Completed 200 OK in 21ms (Views: 2.6ms | ActiveRecord: 8.4ms | Allocations: 7448)
+
+
+Started PUT "/api/tasks/11" for ::1 at 2024-02-22 16:27:37 +0530
+Processing by Api::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:87:in `set_task'
+[31mUnpermitted parameter: :priority. Context: { controller: Api::TasksController, action: update, request: #<ActionDispatch::Request:0x00007f57a0d68cc0>, params: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"High"}, "controller"=>"api/tasks", "action"=>"update", "id"=>"11"} }[0m
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.3ms | Allocations: 51)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1213)
+
+
+Started PUT "/api/tasks/11" for ::1 at 2024-02-22 16:28:20 +0530
+  
+SyntaxError (/home/prabhu/personal/tasK_management/app/controllers/api/tasks_controller.rb:98: syntax error, unexpected symbol literal
+...cription, :due_date, :status. :priority)
+...                              ^
+):
+  
+app/controllers/api/tasks_controller.rb:98: syntax error, unexpected symbol literal
+Started PUT "/api/tasks/11" for ::1 at 2024-02-22 16:28:30 +0530
+Processing by Api::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:87:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:27:in `update'
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE `tasks` SET `tasks`.`priority` = 1, `tasks`.`updated_at` = '2024-02-22 10:58:30.268990' WHERE `tasks`.`id` = 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:27:in `update'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.8ms | Allocations: 129)
+Completed 200 OK in 41ms (Views: 3.4ms | ActiveRecord: 21.1ms | Allocations: 7958)
+
+
+Started GET "/api/tasks/11" for ::1 at 2024-02-22 16:29:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::TasksController#show as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:87:in `set_task'
+  Rendering api/tasks/show.json.jbuilder
+  Rendered api/tasks/show.json.jbuilder (Duration: 0.8ms | Allocations: 395)
+Completed 200 OK in 271ms (Views: 3.1ms | ActiveRecord: 2.1ms | Allocations: 297140)
+
+
+Started DELETE "/api/tasks/11" for ::1 at 2024-02-22 16:29:16 +0530
+Processing by Api::TasksController#destroy as */*
+  Parameters: {"task"=>{"title"=>"Task Title", "description"=>"Task Description", "due_date"=>"2024-03-03", "priority"=>"High"}, "id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 ORDER BY due_date desc, priority asc LIMIT 1[0m
+  ↳ app/controllers/api/tasks_controller.rb:87:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tasks_controller.rb:35:in `destroy'
+  [1m[36mTask Destroy (0.3ms)[0m  [1m[31mDELETE FROM `tasks` WHERE `tasks`.`id` = 11[0m
+  ↳ app/controllers/api/tasks_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tasks_controller.rb:35:in `destroy'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 12.9ms | Allocations: 1986)
+
+

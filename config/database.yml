@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  database: task_management
+  username: root
+  password: Password@123
+  pool: 60
+  timeout: 5000
+  reconnect: true
